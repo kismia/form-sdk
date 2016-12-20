@@ -1,0 +1,164 @@
+@import "colors"
+@import "../common"
+
+body
+    background-color $form-bg-color
+    font-size 100%
+    font-family Helvetica, Verdana, Arial, sans-serif
+    margin 0
+    overflow-x hidden
+
+$control-group
+    display block
+    margin-bottom 28px
+
+form
+    padding 0
+    max-width 26em
+    width 100%
+    margin 0 auto
+
+    font-size 0.875em
+    font-weight 400
+    text-align center
+
+label
+    display inline-block
+    width 35%
+    padding 0
+
+    color $text-color = #919498
+
+    vertical-align middle
+    text-align left
+
+input
+    padding .7em 2.5em
+    width 100%
+
+    border-radius 5px
+    border 1px solid $input-border-color
+    box-sizing border-box
+
+    &:active,
+    &:focus
+      box-shadow $input-border-focus-shadow
+      outline 0
+
+    &--error
+      box-shadow $input-border-focus-error-shadow
+
+button
+    display inline-block
+    height 48px
+    width auto
+    padding 0 20px
+    min-width 200px
+
+    background $submit-button-color
+    background $submit-button-gradient
+    cursor pointer
+    box-sizing border-box
+    color $white
+    border-radius 5px
+    border 0
+
+    text-align center
+
+    &:hover
+      background darken($submit-button-color, 25%)
+
+    &[disabled]
+      background $submit-button-disabled-color
+      cursor default
+
+.input-block
+    position relative
+    display inline-block
+    width 63%
+    text-align left
+
+.validation-icon
+    $height = 16px
+
+    position absolute
+    height $height
+    width $height
+    top 50%
+    margin-top -($height/2)
+    right 10px
+
+.dirty
+    &.error
+        .validation-icon
+            background url("../../img/error-icon.png") no-repeat center/contain
+
+        .error-text
+            display block
+
+    &.valid .validation-icon
+        background url("../../img/valid-icon.png") no-repeat center/contain
+
+.error-text
+    display none
+    position absolute
+    left 0
+    top 100%
+    margin 2px 0
+    padding-top 0
+    height 24px
+    width 100%
+
+    background #f5f5f7
+    color $error-text-color
+    text-align center
+
+    font-size .8em
+    line-height 1.1
+    z-index 2
+.description
+    display none
+.description:not(:empty)
+    @extend .error-text
+    color $text-color = #919498
+    display block
+    z-index 1
+
+.card_number
+.card_holder
+.expiry-date
+.card_cvv
+.cpf
+.dni
+.personal_id
+.address
+.city
+.zip_code
+    @extend $control-group
+
+.card_cvv
+    input
+        width 45%
+    .validation-icon
+        left 33%
+
+.card_exp_month
+.card_exp_year
+    display inline-block
+    width 45%
+
+    & .input-block
+        width 100%
+
+.date-separator
+    text-align center
+    display inline-block
+    width 10%
+    color $text-color = #919498
+
+.expiry-date
+    .input-block
+        font-size 0
+
+.date-separator
+    font-size 16px

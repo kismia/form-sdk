@@ -1,0 +1,20 @@
+icon($name, $height = 16)
+    background-image url("../../img/" + $name + ".png")
+    background-repeat no-repeat
+    background-position 10px 50%
+
+$icons = {
+    "card_number": "card-number",
+    "card_exp_month": "calendar",
+    "card_exp_year": "calendar",
+    "card_holder": "name",
+    "card_cvv": "cvc",
+    "address": "address",
+    "city": "city",
+    "zip_code": "zip"
+}
+
+for $input, $icon in $icons
+    .{$input} input
+        icon($icon)
+

@@ -1,0 +1,35 @@
+logo($name)
+    background url("img/" + $name + ".jpg") no-repeat center / contain
+
+$card-logo
+    display inline-block
+    height 20px
+    width 32px
+    padding 0
+    margin 0 5px
+
+    &:before
+        content ''
+        display block
+        height 100%
+        width 100%
+
+card-logo($card-name)
+    .{$card-name}
+        @extend $card-logo
+        logo($card-name)
+
+
+$cards = "visa", "master-card", "maestro", "discover"
+
+for $card in $cards
+    card-logo($card)
+
+.card-brands
+    padding 10px 110px 10px 0
+    text-align right
+    width 260px
+
+    margin 0 auto
+    display block
+
