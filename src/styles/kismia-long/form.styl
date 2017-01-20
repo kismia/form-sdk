@@ -33,7 +33,7 @@ label
     text-align left
 
 input
-    padding .7em 2.5em
+    padding .7em 35px
     width 100%
 
     border-radius 5px
@@ -162,3 +162,47 @@ button
 
 .date-separator
     font-size 16px
+
+.card_cvv .tooltip-icon {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: 1px solid #919498;
+    cursor: pointer;
+    text-align: center;
+}
+.card_cvv .tooltip-icon:before {
+    content: '?';
+    display: inline-block;
+    font: 12px/18px Helvetica, Arial, sans-serif;
+    color: #919498;
+}
+.card_cvv .tooltip-icon:hover {
+    border: 1px solid #91C1F5;
+}
+.card_cvv .tooltip-icon:hover::before {
+    color: #91C1F5;
+}
+.card_cvv .tooltip-icon:hover ~ .tooltip {
+    display: block;
+}
+
+.tooltip {
+    display: none;
+    position absolute
+    top -160px
+    right 95px
+
+    min-width 240px
+    min-height 150px
+    background #fff url('img/cvv-hint.png') no-repeat center;
+    border-radius 9px
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5)
+    padding 0
+    box-sizing border-box
+    z-index 100
+}

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -p --progress",
     "build:dev": "cross-env NODE_ENV=development webpack -d",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --port 8090",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --port 8081",
     "test-server:error": "node ./test-server/server response-error",
     "test-server:process": "node ./test-server/server response-process",
     "test-server:approved": "node ./test-server/server response-approved",

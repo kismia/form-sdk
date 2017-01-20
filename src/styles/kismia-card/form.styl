@@ -298,25 +298,32 @@ select option:disabled {
     padding: 0 5px;
 }
 
-.card_cvv
-    .tooltip-icon
-        position absolute
-        top 100%
-        left 0
-        width 100%
-        padding 7px 0
-        display inline-block
-        font-size .7em
-        color #333
-        text-align center
-        text-decoration underline
-        cursor pointer
-
-        &:hover
-            text-decoration none
-
-        &:hover ~ .tooltip
-            display block
+.card_cvv .tooltip-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -10px;
+    left: auto;
+    right: 5px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    text-align: center;
+    display: block;
+}
+.card_cvv .tooltip-icon:before {
+    content: '?';
+    display: inline-block;
+    font: 12px/20px Helvetica, Arial, sans-serif;
+    color: #919498;
+}
+.card_cvv .tooltip-icon:hover::before {
+    color: #91C1F5;
+}
+.card_cvv .tooltip-icon:hover ~ .tooltip {
+    display: block;
+}
 
 .tooltip
     position absolute
