@@ -11,6 +11,7 @@ body
 $control-group
     display block
     margin-bottom 28px
+    position: relative;
 
 form
     padding 0
@@ -77,6 +78,7 @@ button
     display inline-block
     width 63%
     text-align left
+    vertical-align middle
 
 .validation-icon
     $height = 16px
@@ -87,6 +89,8 @@ button
     top 50%
     margin-top -($height/2)
     right 10px
+    pointer-events none
+
 
 .dirty
     &.error
@@ -98,6 +102,12 @@ button
 
     &.valid .validation-icon
         background url("../../img/valid-icon.png") no-repeat center/contain
+
+.expiry-date-select.error.dirty .error-text {
+    width: 63%;
+    right: 0;
+    left: auto;
+}
 
 .error-text
     display none
@@ -126,7 +136,7 @@ button
 
 .card_number
 .card_holder
-.expiry-date
+.expiry-date-select
 .card_cvv
 .cpf
 .dni
@@ -142,24 +152,58 @@ button
     .validation-icon
         left 33%
 
-.card_exp_month
-.card_exp_year
+
+.card_exp_month_select
+.card_exp_year_select
     display inline-block
     width 45%
+    vertical-align middle
+
+    &  label
+        display none
 
     & .input-block
+        display block
         width 100%
+        border-radius 5px
+        border 1px solid $input-border-color
+        overflow hidden
+        background-color #fff
+
+
+    & select
+        display block
+        width 100%
+        appearance none
+        padding .7em 35px
+        background transparent
+        border none
+        outline none
+
+        box-sizing border-box
+
+        &:active,
+        &:focus
+            box-shadow $input-border-focus-shadow
+            outline 0
+        &--error
+            box-shadow $input-border-focus-error-shadow
+
 
 .date-separator
     text-align center
     display inline-block
     width 10%
     color $text-color = #919498
+    vertical-align middle
 
-.expiry-date
+.expiry-date-select
     .input-block
         font-size 0
 
+.expiry-date-select > .validation-icon {
+    display: none;
+}
 .date-separator
     font-size 16px
 
