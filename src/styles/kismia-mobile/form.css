@@ -4,6 +4,9 @@ form {
     position: relative;
 }
 
+.city,
+.zip_code,
+.cpf,
 .card_cvv,
 .card_holder,
 .expiry-date-select,
@@ -91,7 +94,7 @@ input {
     margin-right: 7px;
 }
 .card_exp_year_select {
-    width: calc(60% - 15px);
+    width: calc(60% - 16px);
 }
 .card_exp_year_select::after,
 .card_exp_month_select::after {
