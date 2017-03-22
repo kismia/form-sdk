@@ -163,11 +163,12 @@ button {
 .expiry-date-select.error.dirty .error-text
     display none
 
-.expiry-date-select.error.dirty > .error-text
-    display block
-    top 120%
-    left 32%
-    width 220px
+.expiry-date-select.error.dirty > .input-block > .error-text
+    display: block;
+    top: 120%;
+    left: 0;
+    width: 220px;
+    margin-left: -47px;
 
     &:before
         content: '▲'
