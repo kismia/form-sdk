@@ -120,7 +120,7 @@ select {
     background: transparent;
 
     margin: 0;
-    padding: 0 calc(20% + 30px) 0 0;
+    padding: 0 30px 0 10px;
 
     text-align: center;
     font: 20px/46px Helvetica, sans-serif;
@@ -139,9 +139,6 @@ select {
     appearance: none;
 
     outline: none;
-}
-select option:disabled:selected {
-    color: rgba(142, 142, 147, 0.54);
 }
 select option:disabled {
     display: none;
