@@ -33,7 +33,7 @@ mixin form
         span.cost
 
 mixin cardNumber
-    +input("Card number", "card_number", "1111 1111 1111 1111", "", "tel")(
+    +input("Card number", "card_number", "XXXX XXXX XXXX XXXX", "", "tel")(
         maxlength="30",
         errortext="Número do cartão selecionado inválido")
 
@@ -44,14 +44,14 @@ mixin expiryDate
     .expiry-date
         label(for="card_exp_month-input") Expiry date
         .input-block
-            +input("Card exp month", "card_exp_month", "MM", "", "tel")(
+            +input("Month", "card_exp_month", "MM", "", "tel")(
             maxlength="2",
             onfocus="handleInputFocus(true)",
             onblur="handleInputFocus(false)")
 
             span.date-separator /
 
-            +input("Card exp year", "card_exp_year", "YY", "", "tel")(
+            +input("Year", "card_exp_year", "YYYY", "", "tel")(
             onfocus="handleInputFocus(true);",
             onblur="handleInputFocus(false);",
             maxlength="4")
@@ -102,12 +102,12 @@ mixin expiryDateSelect
     .expiry-date-select
         label(for="card_exp_month-select") Expires
         .input-block
-            +selectRange("Card exp month", "card_exp_month_select", "MM", 1, 12)
+            +selectRange("Month", "card_exp_month_select", "MM", 1, 12)
             -var year = new Date().getFullYear()
 
             span.date-separator /
 
-            +selectRange("Card exp year", "card_exp_year_select", "YY", year, year + 10)
+            +selectRange("Year", "card_exp_year_select", "YYYY", year, year + 10)
 
             +info-block(
                 errortext = 'pay_form.attributes.' + name + '.error',
@@ -115,7 +115,7 @@ mixin expiryDateSelect
                 )
 
 mixin cardCvv
-    +input("Security number", "card_cvv", "1234", "", "tel")(
+    +input("Security number", "card_cvv", "CVV2", "", "tel")(
     maxlength="4",
     description="Os 3 dígitos do número nas costas do seu cartão")
 
