@@ -1,0 +1,72 @@
+card-logo($name)
+
+    .{$name}
+        display inline-block
+
+        &:before
+            content ''
+            display block
+            height 100%
+            width 100%
+            background url("img/" + $name + ".svg") no-repeat center / contain
+
+        //&:not(:last-child)
+        //    margin-right 0
+
+
+$cards = "visa", "master-card", "maestro", "nspk-mir"
+
+for $card in $cards
+    card-logo($card)
+
+.card-brands
+    padding 0 20px
+    box-sizing border-box
+    text-align center
+    width 359px
+
+    margin 0 auto 20px
+    display flex
+    justify-content space-around
+    align-items center
+
+.visa
+    width: 60px
+    height: 28px
+.nspk-mir
+    width: 60px
+    height: 28px
+.master-card
+    width 60px
+    height: 30px
+.maestro
+    width 60px
+    height: 30px;
+    &:before
+        background-size cover;
+
+
+.card_type_mastercard_active
+    i:before
+        -webkit-filter: grayscale(100%) opacity(30%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%) opacity(30%);
+    .master-card:before
+        filter: none;
+.card_type_visa_active
+    i:before
+        -webkit-filter: grayscale(100%) opacity(30%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%) opacity(30%);
+    .visa:before
+        filter: none;
+.card_type_maestro_active
+    i:before
+        -webkit-filter: grayscale(100%) opacity(30%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%) opacity(30%);
+    .maestro:before
+        filter:none
+.card_type_nspk_mir_active
+    i:before
+        -webkit-filter: grayscale(100%) opacity(30%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%) opacity(30%);
+    .nspk-mir:before
+        filter: none;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>a/icons/arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M31.2,8 C30.9792,8 30.7792,8.0896 30.6344,8.2344 L16,22.0984 L1.3656,8.2344 C1.2208,8.0896 1.0208,8 0.8,8 C0.3576,8 0,8.3576 0,8.8 C0,9.0208 0.0888,9.2208 0.2344,9.3656 L15.4344,23.7656 C15.5792,23.9112 15.7792,24 16,24 C16.2208,24 16.4208,23.9112 16.5656,23.7656 L31.7656,9.3656 C31.9112,9.2208 32,9.0208 32,8.8 C32,8.3576 31.6424,8 31.2,8" id="path-1"></path>
+    </defs>
+    <g id="a/icons/arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#434A54" xlink:href="#path-1"></use>
+        <g id="a/color/black" mask="url(#mask-2)" fill="#AAB2BD">
+            <g transform="translate(-20.714286, -19.000000)">
+                <rect x="0" y="0" width="58" height="57"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

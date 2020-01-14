@@ -1,0 +1,27 @@
+icon-err($name, $height = 16)
+    background-image url("../../img/" + $name + "-invalid.png")
+    background-repeat no-repeat
+    background-position 5px 50%
+
+icon($name, $height = 16)
+    background-image url("../../img/" + $name + ".png")
+    background-repeat no-repeat
+    background-position 5px 50%
+
+
+$icons = {
+    "address": "address",
+    "city": "city",
+    "zip_code": "zip",
+    //"cpf": "card-number"
+}
+
+for $input, $icon in $icons
+    .{$input} input
+        icon($icon)
+
+
+for $input, $icon in $icons
+    .{$input} .error input
+        icon-err($icon)
+

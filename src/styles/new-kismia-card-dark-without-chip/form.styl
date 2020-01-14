@@ -1,0 +1,635 @@
+@import "colors"
+
+body
+    background-color $form-bg-color
+    font-family Helvetica, Arial, sans-serif
+    margin 0
+    padding 0
+
+$control-group
+    display inline-block
+    margin-bottom 10px
+    padding 0 10px
+
+
+$control-group-absolute
+    position absolute
+    left: 50%
+
+body
+    background url("img/card_bg.png") no-repeat center top
+    background-size 396px 256px
+    min-height: 295px
+    background-position-y 42px
+
+form
+    position relative
+    padding 0
+    width 360px
+    margin 0 auto
+    box-sizing border-box
+
+    font-size 1em
+    font-weight 400
+
+
+label
+    display inline-block
+    width 30%
+    max-width 4.5em
+
+    margin-right 1em
+    padding 0
+
+    color $text-label
+    font-size .75em
+    font-weight 300
+    vertical-align top
+
+input
+    padding 7px .5em 7px 1.8em
+    width 100%
+
+    //border-radius 3px
+    //border 1px solid $input-border-color
+    box-sizing border-box
+    font-size 16px
+
+    &:active,
+    &:focus
+      outline 0
+
+.card_holder
+.expiry-date
+.card_number
+    input
+        padding 7px .5em
+
+.card_number
+    margin 0
+    padding 60px 20px 21px
+
+    box-sizing border-box
+    width 100%
+    position: relative;
+
+
+    &::after
+        content: 'CARD';
+        display: inline-block;
+        position: absolute;
+        width: 50px;
+        height: 22px;
+        line-height 22px
+        /* text-align: right; */
+        top: 20px;
+        left: 288px;
+        color: #cbcbcb;
+        font-family: Helvetica;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-style: italic;
+    input
+        height: 36px;
+        //text-align left
+        color $text-color
+        //padding 0 0 0 13px
+        padding: 7px .5em 7px 1.7em;
+        line-height 36px
+        letter-spacing 1px
+        word-spacing 15px
+        border-radius 6px
+        border 1px solid rgba(147, 147, 147, 0.4)
+        background-color rgba(240, 240, 240, 0.2)
+    label
+        display block
+        margin-bottom 4px
+        width 40%
+        max-width none
+        line-height 15px
+
+.valid #card_number-input
+    border 1px solid transparent
+
+.card_type_mastercard::after,
+.card_type_visa::after,
+.card_type_maestro::after,
+.card_type_discover::after {
+    display: none
+}
+.card_type_mastercard
+    background url("img/master-card-white.svg") no-repeat
+    background-size: 17%;
+    background-position: 280px 10px;
+.card_type_visa
+    background url("img/visa-white.svg") no-repeat
+    background-size: 13%;
+    background-position: 289px 20px;
+.card_type_maestro
+    background url("img/maestro.svg") no-repeat
+    background-size: 20%;
+    background-position: 278px 17px;
+.card_type_discover
+    background url("img/discover-white.svg") no-repeat
+    background-size: 22%;
+    background-position: 270px 15px;
+
+
+.error.dirty input
+    border: 1px solid $input-border-focus-error
+
+button
+    display block
+    height 3.25em
+    //width 11.85em
+    width 226px
+    margin 20px auto 0
+
+    background $submit-button-color
+    cursor pointer
+    box-sizing border-box
+    color $white
+    border-radius 9px
+    border 0
+
+    font-size 14px
+    text-align center
+    outline none
+
+    &:hover
+        background lighten($submit-button-color, 10%)
+    &:active
+        background $submit-button-color
+
+    &[disabled]
+        background $submit-button-disabled-color
+        cursor default
+
+.input-block
+    position relative
+    display inline-block
+    width 100%
+    min-width 16em
+
+.cpf
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 0 22px;
+    box-sizing: border-box;
+    font-size: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    label
+        display: inline-block;
+        color: #323232;
+        width: auto;
+        font-size: 12px;
+
+    .input-block
+        width: 252px;
+        position: relative
+
+    input
+        height: 49px;
+        text-align: center;
+        text-align-last: center;
+        border-radius: 5px;
+        border: 1px solid #e8e7e7;
+        padding: 0;
+    .tooltip-icon
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: -35px;
+        bottom: 50%;
+        transform: translateY(50%);
+        border-radius: 50%;
+        background: #e7e5e5;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+        font-size: 0;
+
+        &:before
+            content: '?';
+            display: inline-block;
+            font: 10px Helvetica, Arial, sans-serif;
+            line-height: 16px;
+            color: #868a96;
+        &:hover
+            background: #5ddc95;
+            &:before
+                color: $text-color;
+            &~.tooltip
+                display: block;
+                &:after
+                    display: block;
+                &:before
+                    display: block;
+    .tooltip
+        display none
+        position absolute
+        top -38px
+        right 164px
+        width 220px
+        height 52px
+        //background transparent url('img/cpf-hint.svg') no-repeat;
+        background white;
+        border-radius 6px
+        padding 0
+        box-sizing border-box
+        z-index 100
+        //background-size 100%
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+
+        &:before
+            content: "Numéro d'enregistrement CPF";
+            box-sizing border-box
+            display: none
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            z-index 99
+            width: 165px;
+            height: 16px;
+            color: black;
+            font-size: 12px;
+            font-weight: 300;
+        &:after
+            bottom: -12px;
+            left: 99px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(255, 255, 255, 0);
+            border-top-color: #fff;
+            border-width: 6px;
+
+.cpf.error.dirty
+    label
+        color: $error-text-color;
+
+.expiry-date
+    margin-top .3em
+    width 100%
+
+    & .input-block
+        min-width 11.6em
+        max-width 11.6em
+        text-align right
+
+//.error.dirty .error-text
+//    display block
+    
+.error-text
+    display none
+    position absolute
+    background $white
+    margin 0
+    padding: .3em .6em
+    width 100%
+    min-width 16em
+
+    box-shadow $error-text-box-shadow
+    border-radius 6px
+
+    color $error-text-color
+
+    font-size .75em
+    text-align center
+
+    z-index 15
+
+    &:before
+        position absolute
+        color $white
+        font-size .7em
+        transform scaleX(3)
+
+.card_number
+    .error-text
+        top 120%
+        left 0
+        max-width 100%
+        box-sizing border-box
+
+        &:before
+            content '▲'
+            top -8px
+            left 50%
+            margin-left -8px
+            text-shadow $error-text-shadow-top
+
+//.expiry-date-select
+//    .error-text
+//        top 120%
+//        left -173%
+//
+//        &:before
+//            content: '▲'
+//            top -8px
+//            left 50%
+//            margin-left -8px
+//            text-shadow $error-text-shadow-top
+
+//.card_exp_month_select .error-text {
+//    left -35px
+//}
+
+//.card_cvv
+//    .error-text
+//        right: 60%;
+//        top: -15%;
+//
+//        &:before
+//            content '▼'
+//            bottom -7px
+//            right 3em
+//            text-shadow $error-text-shadow-bottom
+
+.cpf
+.address
+.city
+    .error-text
+        max-width 100%
+        bottom 120%
+        left 0
+        box-sizing border-box
+
+        &:before
+            content '▼'
+            left 50%
+            margin-left -8px
+            top 18px
+            text-shadow $error-text-shadow-bottom
+
+.card_number
+.expiry-date-select
+.card_cvv
+.card_holder
+    @extend $control-group
+
+//.card_cvv
+//    .tooltip-icon
+//        left 33%
+
+.expiry-date-select.valid select {
+    color: #ffffff;
+}
+.card_exp_month_select
+.card_exp_year_select
+    display inline-block
+    width auto
+
+    & .input-block
+        min-width auto
+        width auto
+        position relative
+        border-radius 7px
+        border 1px solid transparent
+
+    select
+        display: block;
+        padding: 0 5px;
+        height: 36px;
+        width: 40px;
+        -moz-padding-end: 0;
+        -moz-padding-start: 0;
+        margin: 0;
+        //padding: 0;
+
+        text-align: center;
+        text-align-last: center;
+
+        font: 16px Helvetica, sans-serif;
+        text-indent: 0;
+        color: $text-placeholder;
+        //border: none;
+        border-radius: 6px;
+        background-color: rgba(240, 240, 240, 0.2);
+        border: 1px solid transparent;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        outline: none;
+
+        option
+            color black;
+
+
+select option:disabled {
+    display: none;
+}
+
+.card_exp_year_select {
+    margin 0
+}
+#card_exp_year_select-select option[selected] {
+    color #757575
+}
+.card_exp_year_select select
+    width: 67px;
+    padding: 0 11px
+    -moz-padding-end: 0;
+    -moz-padding-start: 0;
+.card_exp_month_select,
+.card_exp_year_select
+    label
+        display: block
+        width 100%
+        font-size 12px
+        max-width none
+        margin 0 0 4px
+
+.date-separator
+    text-align center
+    display inline-block
+    font-size 16px
+    color $text-label
+    margin 0 8px
+
+.card_cvv {
+    position: relative;
+    margin-right: 20px;
+    padding 0 22px 0 0
+    width auto
+    float: right;
+    margin-bottom: 0
+    //position absolute
+    //right 46px
+}
+
+.card_cvv .input-block {
+    max-width: 100%;
+    min-width: 100%;
+    position: static;
+}
+.card_cvv label {
+    display: block
+    width: auto;
+    max-width: none;
+    margin: 0 0 4px;
+}
+.card_cvv input {
+    text-align: center;
+    text-align-last: center;
+    width: 66px;
+    height: 36px;
+    padding: 0 10px 0 13px
+    border 1px solid transparent
+    border-radius 6px
+    background-color rgba(240, 240, 240, 0.2)
+    color: $text-color
+}
+.card_cvv
+    .tooltip-icon
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: -1px;
+        left: auto;
+        right: 0;
+        border-radius: 50%;
+        background: #e7e5e5;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+        font-size: 0;
+
+        &:before
+            content: '?';
+            display: inline-block;
+            font: 10px Helvetica, Arial, sans-serif;
+            line-height: 16px;
+            color: #868a96;
+        &:hover
+            background: #5ddc95;
+
+            &:before
+                color: $text-color;
+            &~ .tooltip
+                display: block;
+                &:after
+                    display: block;
+                &:before
+                    display: block;
+    .tooltip
+        display none
+        position absolute
+        top -82px
+        right -20px
+        width 163px
+        height 78px
+        background-color white;
+        border-radius 6px
+        padding 0
+        box-sizing border-box
+        z-index 100
+        background-size 100%;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+        &:before
+            content: "";
+            box-sizing border-box
+            background transparent url('img/cvv-hint.svg') no-repeat center;
+            background-size 80%
+            display: none
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            z-index 99
+            width: 163px;
+            height: 50px;
+            color: black;
+            //font-size: 12px;
+            //font-weight: 300;
+        &:after
+            bottom: -12px;
+            right: 22px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(255, 255, 255, 0);
+            border-top-color: #fff;
+            border-width: 6px;
+.decline {
+    display: none;
+}
+.error.dirty ~ .error.dirty .error-text {
+    display: none;
+}
+
+.expiry-date-select
+    position relative
+    padding 0 0 0 20px
+    vertical-align top
+    margin-bottom 28px
+.expiry-date-select > .input-block {
+    min-width auto
+    width 135px
+    font-size 0
+}
+.expiry-date-select > label {
+    //display block;
+    //line-height 22px;
+    //vertical-align: middle;
+    //width: 110px;
+}
+.expiry-date-select.error.dirty .error-text
+    display none
+
+.expiry-date-select.error.dirty > .input-block > .error-text
+    display: block;
+    top: 120%;
+    left: 0;
+    width: 220px;
+    margin-left: -47px;
+
+    &:before
+        content: '▲'
+        top -8px
+        left 50%
+        margin-left -8px
+        text-shadow $error-text-shadow-top
+
+
+.error.dirty .card_exp_month_select
+.error.dirty .card_exp_year_select
+    & .input-block
+        border 1px solid $input-border-focus-error
+
+#card_number-input::placeholder,
+#cpf-input::placeholder,
+#card_cvv-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $text-placeholder;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $text-placeholder;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $text-placeholder;
+}
+
+#card_number-input::placeholder {
+    word-spacing: 23px;
+}

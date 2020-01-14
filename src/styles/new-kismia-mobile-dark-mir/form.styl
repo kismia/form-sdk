@@ -1,0 +1,513 @@
+@import "colors"
+
+body {
+    box-sizing border-box
+    margin: 0
+    padding 0 10px
+    min-height: 295px
+    font-family Helvetica, Arial, sans-serif
+
+    background-color $form-bg-color
+    background url("img/card_bg.png") no-repeat center top
+    //background-size: 105% 227px;
+    background-size: 335px 227px;
+    background-position-y: 35px;
+}
+
+form {
+    margin: 0 auto;
+    padding: 0 10px;
+    position: relative;
+    font-size 0;
+    max-width: 300px;
+    box-sizing border-box
+}
+
+.city,
+.zip_code,
+.cpf,
+.card_cvv,
+.card_holder,
+.expiry-date-select,
+.card_number {
+    position: relative;
+    width: 100%;
+}
+
+.card_number
+    padding: 40px 0 20px;
+    &::after
+        content: 'CARD';
+        display: inline-block;
+        position: absolute;
+        width: 50px;
+        height: 20px;
+        top: 16px;
+        right: 14px;
+        color: #cbcbcb;
+        font-family: Helvetica;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-style: italic;
+    label
+        display: block
+        padding-left: 4px;
+    input
+        padding-left: 13px;
+        text-align: left;
+        word-spacing: 15px;
+        border: 1px solid rgba(147, 147, 147, 0.4);
+
+.card_type_mastercard::after,
+.card_type_visa::after,
+.card_type_maestro::after,
+.card_type_nspk_mir::after {
+    display: none
+}
+
+.card_type_mastercard
+    background url("img/master-card-white.svg") no-repeat
+    background-size: 60px 40px;
+    background-position: 100% 5px;
+.card_type_visa
+    background url("img/visa.svg") no-repeat
+    background-size 50px 25px
+    background-position 98% 18px
+.card_type_maestro
+    background url("img/maestro.svg") no-repeat
+    background-size 65px 35px
+    background-position 100% 10px
+.card_type_nspk_mir
+    background url("img/discover-white.svg") no-repeat
+    background-size 60px 30px
+    background-position 97% 13px
+
+
+label {
+    margin-bottom: 4px
+    font-size: 12px;
+    color: $text-label;
+    font-weight: 300;
+}
+
+//#card_number-input {
+//    padding-left: 13px;
+//    text-align: left;
+//    word-spacing: 23px;
+//    border: 1px solid rgba(147, 147, 147, 0.4);
+//}
+.valid #card_number-input
+    border: 1px solid transparent;
+
+.card_number .input-block {
+    width: 100%
+}
+.input-block {
+    //width: 100%;
+    position: relative;
+    display: inline-block
+}
+
+input {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 36px;
+
+    text-align: center;
+    font: 16px Helvetica, sans-serif;
+    text-indent: 0;
+    color: $text-color;
+    background-color: rgba(240, 240, 240, 0.2);
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    outline: none;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+    color: rgba(142, 142, 147, 0.54);
+}
+
+.error.dirty input {
+    border: 1px solid $input-border-focus-error;
+}
+.error.dirty .error-text {
+    opacity: 1;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    //display: block
+}
+//.card_number.error.dirty .error-text{
+//    display: block
+//}
+.error-text {
+    display: none
+    opacity: 0;
+    height: 0;
+    text-align: center;
+    font: 300 12px/1 Helvetica, sans-serif;
+    color: $error-text-color;
+    margin: 0;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.error.dirty #card_exp_month_select-select,
+.error.dirty #card_exp_year_select-select {
+    border: 1px solid $input-border-focus-error;
+}
+
+.expiry-date-select {
+    display: inline-block
+    width: auto;
+    margin-bottom: 22px;
+}
+.expiry-date-select>.input-block {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    font-size: 0;
+}
+
+.card_exp_year_select,
+.card_exp_month_select
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    //border: 1px solid #c7c7cc;
+    //border-radius: 5px;
+    width: auto
+
+    select
+        display: block;
+        height: 36px;
+        margin: 0;
+        padding: 0;
+        font: 16px Helvetica, sans-serif;
+        max-width: none;
+        //margin: 0 0 4px;
+
+        color: #757575;
+        text-align-last: center;
+        text-align center;
+        text-indent: 0;
+
+        background-color: hsla(0,0%,94%,.2);
+        border: 1px solid transparent;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        outline: none;
+        
+        option
+            color: #000
+
+    label
+        display: block;
+        width: 100%;
+        font-size: 12px;
+        max-width: none;
+        margin: 0 0 4px;
+
+    .input-block
+        min-width: auto;
+        width: auto;
+        position: relative;
+        border-radius: 6px;
+
+.card_exp_month_select select {
+    width: 40px
+    padding: 0 5px;
+    -moz-padding-end: 0;
+    -moz-padding-start: 0;
+}
+
+.card_exp_year_select
+    select
+        width: 67px
+        padding: 0 10px;
+        -moz-padding-end: 0;
+        -moz-padding-start: 0;
+    label
+        padding-left 2px
+
+select option:disabled {
+    display: none;
+}
+
+.expiry-date-select.valid select {
+    color: #ffffff;
+}
+.expiry-date-select .date-separator {
+    margin: 20px 8px 0;
+    display: inline-block;
+    font-size: 16px;
+    color: $text-label;
+    font-weight 300
+
+}
+
+.card_cvv
+    width: auto;
+    display: inline-block;
+    float: right;
+    margin-right: 5px;
+    padding-right: 20px;
+    position: relative;
+
+    label
+        display: block;
+
+    .input-block
+        width: auto;
+        position: static;
+    input
+        width: 66px;
+        display: inline-block;
+        padding 0 10px 0 13px;
+
+    .tooltip-icon
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: -1px;
+        left: auto;
+        right: 0;
+        border-radius: 50%;
+        background: #e7e5e5;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+        font-size: 0;
+        &:before
+            content: '?';
+            display: inline-block;
+            font: 10px Helvetica, Arial, sans-serif;
+            line-height: 16px;
+            color: #868a96;
+        &:hover
+            background: #5ddc95;
+            &:before
+                color: $text-color;
+            &~.tooltip
+                display: block;
+                &:before
+                    display: block
+                &:after
+                    display: block
+    .tooltip
+        display none
+        position absolute
+        top -82px
+        right -20px
+        width 163px
+        height 79px
+        background-color white;
+        border-radius 6px
+        padding 0
+        box-sizing border-box
+        z-index 100
+        background-size 100%
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+        &:before
+            content: "";
+            box-sizing border-box
+            background transparent url('img/cvv-hint.svg') no-repeat center;
+            background-size 80%
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            z-index 99
+            width: 163px;
+            height: 50px;
+            color: black;
+        &:after
+            bottom: -11px;
+            right: 22px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(255, 255, 255, 0);
+            border-top-color: #fff;
+            border-width: 6px;
+
+
+
+
+.cpf
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 0 0 0 0;
+    box-sizing: border-box;
+    font-size: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    label
+        display: inline-block;
+        color: #323232;
+        width: auto;
+        font-size: 12px;
+        margin-bottom: 0
+        padding-right: 15%;
+    .input-block
+        width: 200px;
+        margin-right: -10px;
+        position: relative
+
+    input
+        height: 49px;
+        text-align: center;
+        text-align-last: center;
+        border-radius: 5px;
+        border: 1px solid #e8e7e7;
+        padding: 0;
+        color: #000;
+        :placeholder
+            color: #ffffff80;
+    .tooltip-icon
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: -36px;
+        bottom: 50%;
+        transform: translateY(50%);
+        border-radius: 50%;
+        background: #e7e5e5;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+        font-size: 0;
+
+        &:before
+            content: '?';
+            display: inline-block;
+            font: 10px Helvetica, Arial, sans-serif;
+            line-height: 16px;
+            color: #868a96;
+        &:hover
+            background: #5ddc95;
+            &:before
+                color: $text-color;
+            &~.tooltip
+                display: block;
+                &:after
+                    display: block;
+                &:before
+                    display: block;
+    .tooltip
+        display none
+        position absolute
+        top -38px
+        left -100px
+        width 180px
+        height 52px
+        background white;
+        border-radius 6px
+        padding 0
+        box-sizing border-box
+        z-index 100
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+        &:before
+            content: "Numéro d'enregistrement CPF";
+            box-sizing border-box
+            display: none
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            z-index 99
+            width: 165px;
+            height: 16px;
+            color: black;
+            font-size: 12px;
+            font-weight: 300;
+        &:after
+            bottom: -12px;
+            left: 65px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(255, 255, 255, 0);
+            border-top-color: #fff;
+            border-width: 6px;
+
+.cpf.error.dirty
+    label
+        color: $error-text-color;
+
+button {
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin-top: 20px;
+
+    color: #fff;
+    font: 16px/48px Helvetica, sans-serif;
+
+    background: $submit-button-color;
+    border-radius: 9px;
+}
+button:active,
+button:focus {
+    background: #67ce7e;
+}
+#card_number-input::placeholder,
+#cpf-input::placeholder,
+#card_cvv-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $text-placeholder;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $text-placeholder;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $text-placeholder;
+}
+
+#card_number-input::placeholder {
+    word-spacing: 23px;
+}
