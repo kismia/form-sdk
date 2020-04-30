@@ -1,0 +1,68 @@
+
+.card-brands {
+    padding 0 15px
+    box-sizing border-box
+    text-align center
+    max-width: 300px;
+
+    margin 0 auto 14px
+    display flex
+    justify-content space-between
+    align-items center
+}
+.card-brands i {
+    display: none;
+    height: 22px;
+    width: 30%;
+}
+.card-brands .visa {
+    display: inline-block;
+    background: url('img/visa-blue.svg') no-repeat center / contain;
+    width: 60px
+    height: 30px
+}
+.card-brands .discover {
+    display: inline-block;
+    background: url('img/discover.svg') no-repeat center / contain;
+    width: 60px
+    height: 30px
+}
+.card-brands .master-card {
+    display: inline-block;
+    background: url('img/master-card.svg') no-repeat center / contain;
+    width 60px
+    height: 30px
+}
+.card-brands .maestro {
+    display: inline-block;
+    background: url('img/maestro.svg') no-repeat;
+    width 60px
+    height: 30px;
+    background-position-x: -8px;
+    background-size cover;
+}
+
+.card_type_mastercard_active
+    i
+        -webkit-filter: grayscale(100%) opacity(30%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%) opacity(30%);
+    .master-card
+        filter: none
+.card_type_visa_active
+    i
+        -webkit-filter: grayscale(100%) opacity(30%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%) opacity(30%);
+    .visa
+        filter: none;
+.card_type_maestro_active
+    i
+        -webkit-filter: grayscale(100%) opacity(30%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%) opacity(30%);
+    .maestro
+        filter: none;
+.card_type_discover_active
+    i
+        -webkit-filter: grayscale(100%) opacity(30%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%) opacity(30%);
+    .discover
+        filter: none;

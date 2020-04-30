@@ -1,0 +1,61 @@
+.card-brands {
+  display flex
+  justify-content space-between
+  align-items center
+  margin: 0 auto 15px
+  max-width: 280px;
+  box-sizing border-box
+}
+.card-brands i {
+  display: none;
+  height: 30px;
+  width: 25%;
+  -webkit-filter: opacity(80%); /* Safari 6.0 - 9.0 */
+  filter: opacity(80%);
+}
+.card-brands .visa {
+  display: inline-block;
+  background: url('img/visa.svg') no-repeat center;
+  max-width: 40px
+}
+.card-brands .nspk-mir {
+  display: inline-block;
+  background: url('img/mir.svg') no-repeat center;
+  max-width: 47px
+}
+.card-brands .master-card {
+  display: inline-block;
+  background: url('img/master-card.svg') no-repeat center / contain;
+}
+.card-brands .maestro {
+  display: inline-block;
+  background: url('img/maestro.svg') no-repeat center / contain;
+}
+
+
+.card_number::after {
+  content ''
+  display: block
+  position: absolute
+  right: 20px;
+}
+.card_type_mastercard::after
+  width: 38px
+  height: 29px
+  top 10px;
+  background url("img/master-card.svg") no-repeat center
+.card_type_maestro::after
+  width: 40px
+  height: 30px
+  top 10px;
+  background url("img/maestro.svg") no-repeat center
+.card_type_visa::after
+  width: 40px
+  height: 13px
+  top 15px;
+  background url("img/visa.svg") no-repeat center
+.card_type_nspk_mir::after
+  width: 48px
+  height: 14px
+  top 14px;
+  background url("img/mir.svg") no-repeat center

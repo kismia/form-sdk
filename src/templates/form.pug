@@ -33,7 +33,7 @@ mixin form
         span.cost
 
 mixin cardNumber
-    +input("Card number", "card_number", "1111 1111 1111 1111", "", "tel")(
+    +input("Card number", "card_number", "XXXX XXXX XXXX XXXX", "", "tel")(
         maxlength="30",
         errortext="Número do cartão selecionado inválido")
 
@@ -44,25 +44,41 @@ mixin expiryDate
     .expiry-date
         label(for="card_exp_month-input") Expiry date
         .input-block
-            +input("Card exp month", "card_exp_month", "MM", "", "tel")(
+            +input("Month", "card_exp_month", "MM", "", "tel")(
             maxlength="2",
             onfocus="handleInputFocus(true)",
             onblur="handleInputFocus(false)")
 
             span.date-separator /
 
-            +input("Card exp year", "card_exp_year", "YY", "", "tel")(
+            +input("Year", "card_exp_year", "YYYY", "", "tel")(
             onfocus="handleInputFocus(true);",
             onblur="handleInputFocus(false);",
             maxlength="4")
 
-        +info-block(
-        errortext = "",
-        description = ""
-        )
+            +info-block(
+                errortext = "",
+                description = ""
+                )
 
+mixin select(label, name, placeholder, choices)
 
-mixin select(label, name, placeholder, start_val, end_val)
+    div(class=name)
+        label(for=name + "-select")= label
+        .input-block
+            select(
+            id=name + "-select",
+            name="pay_form[" + name + "]")
+                option(value="", disabled="", selected="")= placeholder
+                each item, key in choices
+                    option(value=key)= item
+
+            +info-block(
+            errortext = 'pay_form.attributes.' + name + '.error',
+            description = attributes.description
+            )
+
+mixin selectRange(label, name, placeholder, start_val, end_val)
     - var item = start_val
 
     div(class=name)
@@ -77,31 +93,36 @@ mixin select(label, name, placeholder, start_val, end_val)
                     option(value=value)= item++
 
             +info-block(
-            errortext = 'pay_form.attributes.' + name + '.error',
-            description = attributes.description
-            )
+                errortext = 'pay_form.attributes.' + name + '.error',
+                description = attributes.description
+                )
 
 mixin expiryDateSelect
 
     .expiry-date-select
         label(for="card_exp_month-select") Expires
         .input-block
-            +select("Card exp month", "card_exp_month_select", "MM", 1, 12)
+            +selectRange("Month", "card_exp_month_select", "MM", 1, 12)
             -var year = new Date().getFullYear()
 
             span.date-separator /
 
-            +select("Card exp year", "card_exp_year_select", "YY", year, year+10)
+            +selectRange("Year", "card_exp_year_select", "YYYY", year, year + 10)
 
-        +info-block(
-        errortext = 'pay_form.attributes.' + name + '.error',
-        description = attributes.description
-        )
+            +info-block(
+                errortext = 'pay_form.attributes.' + name + '.error',
+                description = attributes.description
+                )
 
 mixin cardCvv
-    +input("Security number", "card_cvv", "1234", "", "tel")(
-        maxlength="4",
-        description="Os 3 dígitos do número nas costas do seu cartão")
+    +input("Security number", "card_cvv", "CVV2", "", "tel")(
+    maxlength="4",
+    description="Os 3 dígitos do número nas costas do seu cartão")
+
+mixin cardPin
+    +input("PIN", "card_pin", "PIN", "", "tel")(
+    maxlength="4",
+    description="Card PIN")
 
 mixin cpf
     +input("CPF", "cpf", "CPF data")
@@ -114,6 +135,9 @@ mixin personalId
 
 mixin address
     +input("Address", "address", "address", "8 Banana street")
+
+mixin state
+    +select("State", "state", "", {'AE': 'AE - U.S. Armed Forces – Europe', 'AK': 'AK - Alaska', 'AL': 'AL - Alabama'})
 
 mixin city
     +input("city", "city", "city", "New York", "New York")

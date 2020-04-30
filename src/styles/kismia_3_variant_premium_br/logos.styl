@@ -1,0 +1,86 @@
+.card-brands {
+  display flex
+  justify-content space-between
+  align-items center
+  flex-wrap: wrap;
+  margin: 0 auto 15px;
+  max-width 280px;
+  padding: 0 7px;
+  box-sizing border-box;
+}
+.card-brands i {
+  display: none;
+  height: 30px;
+  width: 25%;
+  -webkit-filter: opacity(80%); /* Safari 6.0 - 9.0 */
+  filter: opacity(80%);
+}
+.card-brands .visa {
+  display: inline-block;
+  background: url('img/visa.svg') no-repeat center;
+  margin-bottom: 10px
+  max-width: 40px
+}
+.card-brands .master-card {
+  display: inline-block;
+  background: url('img/master-card.svg') no-repeat center / contain;
+  margin-bottom: 10px
+}
+.card-brands .maestro {
+  display: inline-block;
+  background: url('img/maestro.svg') no-repeat center / contain;
+  margin-bottom: 10px
+}
+.card-brands .american-express {
+  display: inline-block;
+  background: url('img/american-express.svg') no-repeat center;
+  margin-bottom: 10px;
+  max-width: 60px;
+}
+
+.card-brands .aura {
+  display: inline-block;
+  background: url('img/aura.svg') no-repeat center;
+  width: 33%
+  margin-left: 4%;
+}
+.card-brands .elo {
+  display: inline-block;
+  background: url('img/elo.svg') no-repeat center;
+  width: 33%
+  max-width: 55px;
+}
+.card-brands .hiper-card {
+  display: inline-block;
+  background: url('img/hiper-card.svg') no-repeat center;
+  width: 33%
+  margin-right: 4%;
+}
+
+
+.card_number::after {
+  content ''
+  display: block
+  position: absolute
+  right: 20px;
+}
+.card_type_mastercard::after
+  width: 38px
+  height: 29px
+  top 10px;
+  background url("img/master-card.svg") no-repeat center
+.card_type_maestro::after
+  width: 40px
+  height: 30px
+  top 10px;
+  background url("img/maestro.svg") no-repeat center
+.card_type_visa::after
+  width: 40px
+  height: 13px
+  top 15px;
+  background url("img/visa.svg") no-repeat center
+.card_type_amex::after
+  width: 60px
+  height: 22px
+  top 13px;
+  background url("img/american-express.svg") no-repeat center

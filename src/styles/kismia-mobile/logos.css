@@ -1,0 +1,28 @@
+.secure-info {
+    width: 100%;
+    display: block;
+    padding: 15px 0;
+    height: 23px;
+    background: url('img/secure_icons.png') no-repeat center / auto 23px;
+}
+
+.card-brands {
+    text-align: center;
+}
+.card-brands i {
+    display: none;
+    height: 22px;
+    width: 30%;
+}
+.card-brands .visa {
+    display: inline-block;
+    background: url('../../img/visa-vb.png') no-repeat center / contain;
+}
+.card-brands .master-card {
+    display: inline-block;
+    background: url('../../img/master-card.png') no-repeat center / contain;
+}
+.card-brands .american-express {
+    display: inline-block;
+    background: url('../../img/american-express.png') no-repeat center / contain;
+}

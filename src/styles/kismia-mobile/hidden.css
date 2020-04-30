@@ -1,0 +1,8 @@
+.expiry-date-select.error.dirty .error-text ,
+.tooltip,
+.date-separator,
+.description,
+label,
+.header {
+    display: none;
+}

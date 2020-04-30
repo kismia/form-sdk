@@ -1,0 +1,461 @@
+@import "colors"
+
+body {
+    box-sizing border-box
+    margin: 0
+    padding: 10px 5px 0;
+    font-family Helvetica, Arial, sans-serif;
+}
+
+form {
+    margin: 0 auto;
+    position: relative;
+    font-size 0;
+    max-width: 280px;
+    box-sizing border-box
+
+}
+form:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 280px;
+    height: 167px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
+    background-color: #f5f7fa;
+    z-index: -1;
+}
+
+//form:before {
+//    content: '';
+//    display: block;
+//    position: absolute;
+//    top: 10px;
+//    left: 20px;
+//    width: 28px;
+//    height: 22px;
+//    background url("img/chip-square.svg") no-repeat center center;
+//    background-size contain;
+//}
+
+.city,
+.zip_code,
+.cpf,
+.card_cvv,
+.card_holder,
+.expiry-date-select,
+.card_number {
+    position: relative;
+    //width: 100%;
+}
+
+
+.card_type_mastercard
+    background url("img/master-card.svg") no-repeat
+    background-size: 46px 28px;
+    background-position: 94% 7px;
+.card_type_visa
+    background url("img/visa-blue.svg") no-repeat
+    background-size: 60px 30px;
+    background-position: 94% 6px;
+.card_type_maestro
+    background url("img/maestro.svg") no-repeat
+    background-size 57px 35px
+    background-position 96% 4px
+.card_type_discover
+    background url("img/discover.svg") no-repeat
+    background-size 60px 30px
+    background-position 94% 7px
+.card_type_nspk_mir
+    background url("img/mir.svg") no-repeat
+    background-size 60px 30px
+    background-position 94% 5px
+
+label {
+    margin-bottom: 5px
+    line-height: 17px;
+    font-size: 12px;
+    font-weight: 300;
+    color: $text-label;
+
+}
+
+#card_number-input {
+    text-align: left;
+    word-spacing: 19px;
+}
+//.valid #card_number-input
+//    border: 1px solid transparent;
+
+
+.card_number
+    padding: 52px 0 20px 20px;
+    //&::after
+    //    content: 'CARD';
+    //    display: inline-block;
+    //    position: absolute;
+    //    width: 50px;
+    //    height: 20px;
+    //    top: 16px;
+    //    right: 14px;
+    //    color: #cbcbcb;
+    //    font-family: Helvetica;
+    //    font-size: 18px;
+    //    font-weight: 700;
+    //    text-transform: uppercase;
+    //    font-style: italic;
+    label
+        display: block
+
+    .input-block
+        width: 100%
+
+    .error-text
+        left: -20px
+        width: calc(100% + 20px);
+//
+//.card_type_mastercard::after,
+//.card_type_visa::after,
+//.card_type_maestro::after,
+//.card_type_discover::after {
+//    display: none
+//}
+
+.input-block {
+    //width: 100%;
+    position: relative;
+    display: inline-block
+}
+
+input {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 17px;
+    font: 14px Helvetica, sans-serif;
+    text-indent: 0;
+    color: $text-color;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.error-text {
+    height: 0
+    opacity 0
+}
+.error.dirty .error-text {
+    display: block
+    position: absolute;
+    height: auto
+    opacity 1
+    //width: 100%;
+    margin: 0;
+    bottom -170px
+    text-align center
+    font-size: 14px
+    color $error-text-color
+
+}
+
+.error.dirty #card_exp_month_select-select,
+.error.dirty #card_exp_year_select-select {
+    color $error-text-color
+}
+
+.error.dirty .card_exp_month_select .error-text,
+.error.dirty .card_exp_year_select .error-text
+    display: none
+
+
+.expiry-date-select
+    display: inline-block
+    width: 50%;
+    margin-bottom: 20px;
+    padding-left: 20px
+    box-sizing border-box
+
+    > label
+        display: block
+        line-height: 14px;
+
+    > .input-block
+        display: flex;
+        align-items: center;
+        font-size: 0;
+
+        .error-text
+            position: absolute
+            left: -20px;
+            width: 280px
+            bottom: -114px;
+    .date-separator
+        margin: 0 3px 0 2px;
+        display: inline-block;
+        font-size: 14px;
+        color: $text-placeholder;
+        font-weight 300;
+
+
+.card_exp_year_select,
+.card_exp_month_select
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    width: auto
+
+    select
+        display: block;
+        height: 17px;
+        margin: 0;
+        padding: 0;
+        font: 14px Helvetica, sans-serif;
+        max-width: none;
+
+        text-align-last: center;
+        text-align center;
+        text-indent: 0;
+        color: $text-placeholder;
+        background-color transparent
+
+        border: 0;
+        appearance: none;
+        outline: none;
+
+        box-sizing: border-box;
+
+        option
+            color #000
+
+
+.expiry-date-select.valid select {
+    color: $text-color;
+}
+
+.card_cvv
+    display: inline-block;
+    width: 140px;
+    margin-bottom: 20px
+    vertical-align: top;
+
+    .input-block
+        width: 100%
+
+        .error-text
+            position: absolute
+            bottom -114px
+            width: 280px
+            right: 0
+
+    label
+        display: block;
+        line-height: 14px;
+
+    input
+        width: 66px;
+        display: inline-block;
+
+
+
+.cpf
+    width: 100%;
+    margin: 15px 0 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0;
+
+    label
+        display: none;
+        color: $text-label;
+        width: auto;
+        font-size: 12px;
+    .input-block
+        width: 100%;
+        margin-right: -10px;
+        position: relative
+
+        .error-text
+            bottom -35px
+            width: 280px
+
+    input
+        height: 44px;
+        padding-left 20px;
+
+        background-color: $input-background;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: $text-color;
+        outline: none;
+
+    .tooltip-icon
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 20px;
+        bottom: 50%;
+        transform: translateY(50%);
+        border-radius: 50%;
+        background-color: #e7e5e5;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+        font-size: 0;
+
+        &:before
+            content: '?';
+            display: inline-block;
+            font: 10px Helvetica, Arial, sans-serif;
+            line-height: 16px;
+            color: #656d78;
+        &:hover
+            //background: $submit-button-color;
+            &:before
+                color: $tooltip-icon-text-color;
+            &~.tooltip
+                display: block;
+    .tooltip
+        display none
+        position absolute
+        top -38px
+        right: 0
+        width 180px
+        height 52px
+        background-color white;
+        border-radius 6px
+        padding 0
+        box-sizing border-box
+        z-index 100
+        filter: drop-shadow(-3px 0px 14px rgba(0,0,0,.1));
+
+        &:before
+            content: "Numéro d'enregistrement CPF";
+            box-sizing border-box
+            display: block
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            z-index 99
+            width: 165px;
+            height: 16px;
+            color: black;
+            font-size: 12px;
+            font-weight: 300;
+        &:after
+            bottom: -12px;
+            right: 22px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(255, 255, 255, 0);
+            border-top-color: #fff;
+            border-width: 6px;
+
+button
+    display: inline-block
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    height: 43px;
+    margin-top: 20px;
+    padding: 0 0 1px 0;
+    position: relative
+    z-index: 1;
+    transition margin .5s
+
+    color: #fff;
+    font: 14px Helvetica, sans-serif;
+
+    background-color: $submit-button-color;
+    border-radius: $input-border-radius;
+
+//button:before
+//    content: ''
+//    display: inline-block
+//    vertical-align: text-top;
+//    margin-right: 9px;
+//    width: 11px;
+//    height: 14px;
+//    background url("img/lock-darkened.svg") no-repeat center;
+//    background-size contain
+
+.error.dirty ~ button {
+    margin-top: 54px
+    transition 0.5s
+}
+
+//.card_number.valid ~ .expiry-date-select.valid ~ .card_cvv.valid ~ .cpf.valid  ~ input ~ button {
+//    background-color: $submit-button-color;
+//    color: #fff;
+//}
+//.card_number.valid ~ .expiry-date-select.valid ~ .card_cvv.valid ~ .cpf.valid  ~ input ~ button:before {
+//    background url("img/lock-darkened.svg") no-repeat center;
+//    background-size contain;
+//}
+
+.secure-info {
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+    height: 20px;
+    background: url('img/secure_icons.svg') no-repeat center 0;
+    background-size: 185px 20px;
+}
+
+
+
+.error.dirty ~ .error.dirty .error-text {
+    display: none;
+}
+
+.error.dirty input::placeholder {
+    color $error-text-color;
+}
+
+
+.error.dirty + .error.dirty input::placeholder {
+    color $text-placeholder;
+}
+
+.error.dirty + .error.dirty #card_exp_year_select-select,
+.error.dirty + .error.dirty #card_exp_month_select-select {
+    color $text-placeholder;
+}
+
+
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $text-placeholder;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $text-placeholder;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $text-placeholder;
+}
+
+
+#card_number-input::placeholder {
+    word-spacing: 18px;
+}

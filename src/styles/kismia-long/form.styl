@@ -1,0 +1,252 @@
+@import "colors"
+@import "../common"
+
+body
+    background-color $form-bg-color
+    font-size 100%
+    font-family Helvetica, Verdana, Arial, sans-serif
+    margin 0
+    overflow-x hidden
+
+$control-group
+    display block
+    margin-bottom 28px
+    position: relative;
+
+form
+    padding 0
+    max-width 26em
+    width 100%
+    margin 0 auto
+
+    font-size 0.875em
+    font-weight 400
+    text-align center
+
+label
+    display inline-block
+    width 35%
+    padding 0
+
+    color $text-color = #919498
+
+    vertical-align middle
+    text-align left
+
+input
+    padding .7em 35px
+    width 100%
+
+    border-radius 5px
+    border 1px solid $input-border-color
+    box-sizing border-box
+
+    &:active,
+    &:focus
+      box-shadow $input-border-focus-shadow
+      outline 0
+
+    &--error
+      box-shadow $input-border-focus-error-shadow
+
+button
+    display inline-block
+    height 48px
+    width auto
+    padding 0 20px
+    min-width 200px
+
+    background $submit-button-color
+    background $submit-button-gradient
+    cursor pointer
+    box-sizing border-box
+    color $white
+    border-radius 5px
+    border 0
+
+    text-align center
+
+    &:hover
+      background darken($submit-button-color, 25%)
+
+    &[disabled]
+      background $submit-button-disabled-color
+      cursor default
+
+.input-block
+    position relative
+    display inline-block
+    width 63%
+    text-align left
+    vertical-align middle
+
+.validation-icon
+    $height = 16px
+
+    position absolute
+    height $height
+    width $height
+    top 50%
+    margin-top -($height/2)
+    right 10px
+    pointer-events none
+
+
+.dirty
+    &.error
+        .validation-icon
+            background url("../../img/error-icon.png") no-repeat center/contain
+
+        .error-text
+            display block
+
+    &.valid .validation-icon
+        background url("../../img/valid-icon.png") no-repeat center/contain
+
+.expiry-date-select.error.dirty .error-text {
+    width: 63%;
+    right: 0;
+    left: auto;
+}
+
+.error-text
+    display none
+    position absolute
+    left 0
+    top 100%
+    margin 2px 0
+    padding-top 0
+    height 24px
+    width 100%
+
+    background #f5f5f7
+    color $error-text-color
+    text-align center
+
+    font-size .8em
+    line-height 1.1
+    z-index 2
+.description
+    display none
+.description:not(:empty)
+    @extend .error-text
+    color $text-color = #919498
+    display block
+    z-index 1
+
+.card_number
+.card_holder
+.expiry-date-select
+.card_cvv
+.cpf
+.dni
+.personal_id
+.address
+.city
+.zip_code
+    @extend $control-group
+
+.card_cvv
+    input
+        width 45%
+    .validation-icon
+        left 33%
+
+
+.card_exp_month_select
+.card_exp_year_select
+    display inline-block
+    width 45%
+    vertical-align middle
+
+    &  label
+        display none
+
+    & .input-block
+        display block
+        width 100%
+        border-radius 5px
+        border 1px solid $input-border-color
+        overflow hidden
+        background-color #fff
+
+
+    & select
+        display block
+        width 100%
+        appearance none
+        padding .7em 35px
+        background transparent
+        border none
+        outline none
+
+        box-sizing border-box
+
+        &:active,
+        &:focus
+            box-shadow $input-border-focus-shadow
+            outline 0
+        &--error
+            box-shadow $input-border-focus-error-shadow
+
+
+.date-separator
+    text-align center
+    display inline-block
+    width 10%
+    color $text-color = #919498
+    vertical-align middle
+
+.expiry-date-select
+    .input-block
+        font-size 0
+
+.expiry-date-select > .validation-icon {
+    display: none;
+}
+.date-separator
+    font-size 16px
+
+.card_cvv .tooltip-icon {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: 1px solid #919498;
+    cursor: pointer;
+    text-align: center;
+}
+.card_cvv .tooltip-icon:before {
+    content: '?';
+    display: inline-block;
+    font: 12px/18px Helvetica, Arial, sans-serif;
+    color: #919498;
+}
+.card_cvv .tooltip-icon:hover {
+    border: 1px solid #91C1F5;
+}
+.card_cvv .tooltip-icon:hover::before {
+    color: #91C1F5;
+}
+.card_cvv .tooltip-icon:hover ~ .tooltip {
+    display: block;
+}
+
+.tooltip {
+    display: none;
+    position absolute
+    top -160px
+    right 95px
+
+    min-width 240px
+    min-height 150px
+    background #fff url('img/cvv-hint.png') no-repeat center;
+    border-radius 9px
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5)
+    padding 0
+    box-sizing border-box
+    z-index 100
+}

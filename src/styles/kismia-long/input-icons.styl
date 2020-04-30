@@ -1,0 +1,28 @@
+icon($name, $height = 16)
+    background-image url("../../img/" + $name + ".png")
+    background-repeat no-repeat
+    background-position 10px 50%
+
+$icons = {
+    "card_number": "card-number",
+    "card_exp_month_select": "calendar",
+    "card_exp_year_select": "calendar",
+    "card_holder": "name",
+    "card_cvv": "cvc",
+    "address": "address",
+    "city": "city",
+    "zip_code": "zip"
+}
+
+for $input, $icon in $icons
+    .{$input} input
+        icon($icon)
+
+$icons_select = {
+    "card_exp_month_select": "calendar",
+    "card_exp_year_select": "calendar"
+}
+
+for $select, $icon in $icons_select
+    .{$select} .input-block
+        icon($icon)

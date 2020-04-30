@@ -1,0 +1,49 @@
+card-logo($name)
+    .{$name}
+        display table-cell
+        height 26px
+        padding 0 5px
+
+        &:before
+            content ''
+            display block
+            height 100%
+            width 100%
+            background url("img/" + $name + ".png") no-repeat center / contain
+
+        &:not(:last-child)
+            margin-right 0
+
+
+$cards = "visa", "elo", "american-express", "master-card", "aura", "hiper-card"
+
+for $card in $cards
+    card-logo($card)
+
+.card-brands
+    padding 8px 80px 8px 0
+    text-align center
+    width 270px
+
+    margin 0 auto
+    display table
+    table-layout fixed
+
+.visa {
+    width: 34px;
+}
+.elo {
+    width: 23px;
+}
+.american-express {
+    width: 34px;
+}
+.master-card {
+    width: 34px;
+}
+.aura {
+    width: 32px;
+}
+.hiper-card {
+    width: 48px;
+}

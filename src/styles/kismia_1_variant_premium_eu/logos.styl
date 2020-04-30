@@ -1,0 +1,51 @@
+.card-brands {
+    display flex
+    justify-content space-between
+    align-items center
+    margin-bottom: 10px
+    box-sizing border-box
+}
+.card-brands i {
+    display: none;
+    height: 30px;
+    width: 33%;
+    -webkit-filter: opacity(80%); /* Safari 6.0 - 9.0 */
+    filter: opacity(80%);
+}
+.card-brands .visa {
+    display: inline-block;
+    background: url('img/visa.svg') no-repeat center left;
+}
+
+.card-brands .master-card {
+    display: inline-block;
+    background: url('img/master-card.svg') no-repeat center / contain;
+}
+.card-brands .maestro {
+    display: inline-block;
+    background: url('img/maestro.svg') no-repeat center / contain;
+    background-position-x: 100%;
+}
+
+
+.card_number::after {
+    content ''
+    display: block
+    position: absolute
+    right: 20px;
+}
+.card_type_mastercard::after
+    width: 30px
+    height: 20px
+    top 34px;
+    background url("img/master-card.svg") no-repeat center / contain
+.card_type_visa::after
+    width: 34px
+    height: 12px
+    top 38px;
+    background url("img/visa.svg") no-repeat center / contain
+.card_type_maestro::after
+    width: 30px
+    height: 20px
+    top 34px;
+    background url("img/maestro.svg") no-repeat center / contain
